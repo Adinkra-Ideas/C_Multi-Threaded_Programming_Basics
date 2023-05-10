@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ph_utils.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: euyi <euyi@student.42wolfsburg.de>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 17:03:29 by euyi              #+#    #+#             */
-/*   Updated: 2022/08/08 17:04:21 by euyi             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../assets/philo.h"
+#include "../includes/philo.h"
 
 // ************************************************************************
 // This function converts the four/five philo CMD args to int.			 *
@@ -24,22 +12,22 @@
 // It returns true if it receives only one philosopher as arg,			 *
 // else it returns false in every other situation						 *
 // ************************************************************************
-int	cmd_fix(t_philo	*table, char **argv)
+int	cli_cmd_parser(t_philo	*table, char **argv)
 {
 	int	i;
 
-	table->philo_count = my_atoi(argv[1]);
+	table->philo_count = atoi(argv[1]);
 	if (table->philo_count == 1)
 		return (1);
-	table->lifedur = my_atoi(argv[2]);
-	table->feeddur = my_atoi(argv[3]);
-	table->sleepdur = my_atoi(argv[4]);
+	table->lifedur = atoi(argv[2]);
+	table->feeddur = atoi(argv[3]);
+	table->sleepdur = atoi(argv[4]);
 	table->init_sec = 0;
 	table->death = 0;
 	table->fl_count = 0;
 	table->i = 0;
 	if (argv[5])
-		table->feed_limit = my_atoi(argv[5]);
+		table->feed_limit = atoi(argv[5]);
 	else
 		table->feed_limit = 0;
 	i = 0;

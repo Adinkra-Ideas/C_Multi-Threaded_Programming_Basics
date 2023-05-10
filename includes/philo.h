@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: euyi <euyi@student.42wolfsburg.de>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 16:45:52 by euyi              #+#    #+#             */
-/*   Updated: 2022/08/08 17:25:26 by euyi             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -42,7 +30,7 @@ typedef struct s_philo
 	int				i;
 }					t_philo;
 
-int		cmd_fix(t_philo	*table, char **argv);
+int		cli_cmd_parser(t_philo	*table, char **argv);
 int		my_atoi(const char *nptr);
 int		rig(int philo_count, int this_philo);
 int		sem_switch(t_philo *table, int flag);
